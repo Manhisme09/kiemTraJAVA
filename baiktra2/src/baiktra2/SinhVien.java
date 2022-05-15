@@ -4,7 +4,7 @@
  */
 package baiktra2;
 
-import java.awt.Cursor;
+import java.util.ArrayList;
 
 /**
  *
@@ -202,6 +202,7 @@ public class SinhVien extends javax.swing.JFrame {
 
     private void btn_showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_showActionPerformed
         // TODO add your handling code here:
+        ArrayList<String> languaList = new ArrayList<String>();
         String tm = txt_name.getText();
         String masv = txt_masv.getText();
         String date = txt_ngaySinh.getText();
@@ -215,12 +216,18 @@ public class SinhVien extends javax.swing.JFrame {
         }
         
         if(chk_anh.isSelected()){
-            langua += chk_anh.getText()+ ",";
+            languaList.add(chk_anh.getText());
         }
         if(chk_tq.isSelected()){
-            langua += chk_tq.getText()+",";
+            languaList.add(chk_tq.getText());
         }
-        
+        for (int i = 0; i < languaList.size(); i++) {
+            if(i==languaList.size()-1){
+                langua += languaList.get(i);
+            }else{
+                langua += languaList.get(i)+",";
+            }
+        }     
         String tt = "Họ và tên: "+ tm+ "\nMSV:" + masv + "\nNgày sinh:"+date +"\nGiới tính:"+ gt+"\nNgoai ngu:"+langua;
         jTextPane1.setText(tt);
         
