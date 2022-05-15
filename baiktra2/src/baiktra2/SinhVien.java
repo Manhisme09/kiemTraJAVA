@@ -5,6 +5,8 @@
 package baiktra2;
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -52,6 +54,7 @@ public class SinhVien extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Mạnh dep zai 21333333333333333");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setText("Nhập thông tin");
@@ -234,7 +237,15 @@ public class SinhVien extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_showActionPerformed
 
     private void btn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_closeActionPerformed
-        System.exit(0);
+        JFrame frame = new JFrame("Swing Tester");
+        int result = JOptionPane.showConfirmDialog(frame,
+                        "Bạn có chắc muốn lưu sinh viên này",
+                        "Xác nhận",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE);
+                if(result == JOptionPane.YES_OPTION){
+                   System.exit(0);
+           }
     }//GEN-LAST:event_btn_closeActionPerformed
 
     private void btn_newActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newActionPerformed
